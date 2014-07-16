@@ -4,7 +4,7 @@ def RepeatOne(x):
 	"""RepeatOne(1) : 1, RepeatOne(2) : 11"""
 	return "1" * x
 
-def Solution(input):
+def Ones(input):
 	x = 1
 	complete = False
 	while(not complete):
@@ -16,9 +16,9 @@ def Solution(input):
 
 class OnesTest(unittest.TestCase):
 	def test_result(self):
-		self.assertEqual(Solution(3), 3)
-		self.assertEqual(Solution(7), 6)
-		self.assertEqual(Solution(9901), 12)
+		self.assertEqual(Ones(3), 3)
+		self.assertEqual(Ones(7), 6)
+		self.assertEqual(Ones(9901), 12)
 
 if __name__ == "__main__":
 	unittest.main()
