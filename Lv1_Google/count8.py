@@ -1,7 +1,11 @@
 import unittest
 
 def method1():
-	return 4000
+	count = 0
+	for i in range(1, 10001):
+		if str(i).count("8") > 0:
+			count += str(i).count("8")
+	return count
 
 class TestCount8(unittest.TestCase):
 	def test_methods(self):
