@@ -26,6 +26,12 @@ def method1(n1, n2):
 
 	return max_len_cycles
 
+def method2(n1, n2):
+	cycles = get_cycles(n1, n2)
+	len_cycles = [len(n) for n in cycles]
+
+	return max(len_cycles)
+
 class TestThreeN(unittest.TestCase):
 	def test_solution(self):
 		self.assertEqual(method1(22,22), 16)
@@ -34,6 +40,12 @@ class TestThreeN(unittest.TestCase):
 		self.assertEqual(method1(201, 210), 89)
 		self.assertEqual(method1(900, 1000), 174)
 
+		self.assertEqual(method2(22,22), 16)
+		self.assertEqual(method2(1, 10), 20)
+		self.assertEqual(method2(100, 200), 125)
+		self.assertEqual(method2(201, 210), 89)
+		self.assertEqual(method2(900, 1000), 174)
+		
 	def test_get_cycle(self):
 		self.assertEqual(get_cycle(22), [22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1])
 
